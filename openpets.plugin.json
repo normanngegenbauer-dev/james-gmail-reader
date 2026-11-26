@@ -1,0 +1,51 @@
+{
+  "manifestVersion": 3,
+  "id": "dizzy-capybara-1966.gmail-reader",
+  "name": "Gmail Reader for James",
+  "version": "0.3.19",
+  "description": "Checks Gmail every 20 seconds using metadata-only access. Users can configure their own Google OAuth Client ID and screen resolution.",
+  "runtime": "javascript",
+  "entry": "index.js",
+  "sdkVersion": "3.0.0",
+  "permissions": [
+    "auth",
+    "network",
+    "storage",
+    "commands",
+    "status",
+    "secrets",
+    "network:write",
+    "voice:speak",
+    "pet:speak",
+    "pet:move",
+    "pets:read"
+  ],
+  "network": {
+    "hosts": [
+      "gmail.googleapis.com",
+      "oauth2.googleapis.com"
+    ]
+  },
+  "configSchema": {
+    "googleClientId": {
+      "type": "text",
+      "label": "Google OAuth Client ID",
+      "description": "Hier deine eigene OAuth-Client-ID aus der Google Cloud Console eintragen. Normis Client-ID bleibt als Standard im Plugin enthalten und wird verwendet, wenn dieses Feld leer bleibt."
+    },
+    "googleClientSecret": {
+      "type": "secret",
+      "label": "Google OAuth Client Secret",
+      "description": "Dein eigenes Client-Secret aus der Google Cloud Console hier sicher hinterlegen. Nicht in den Plugin-Code oder in öffentliche Dateien schreiben."
+    },
+    "screenWidth": {
+      "type": "number",
+      "label": "Bildschirmbreite in Pixel",
+      "description": "Deine Bildschirmbreite eintragen. Standard/Fallback: 2560 (QHD)."
+    },
+    "screenHeight": {
+      "type": "number",
+      "label": "Bildschirmhöhe in Pixel",
+      "description": "Deine Bildschirmhöhe eintragen. Standard/Fallback: 1440 (QHD)."
+    }
+  }
+}
